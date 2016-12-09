@@ -1,0 +1,53 @@
+<html ng-app="listaTarefas">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" type="text/css" href="css/tema.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-messages.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/listaTarefasCtrl.js"></script>
+    <script src="js/view.js"></script>
+
+</head>
+<body class="center-block container text-center" ng-controller="listaTarefasCtrl">
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Lista de Tarefas</a>
+            <a class="navbar-btn btn btn" href="#" onclick="location.href = 'https://github.com/pedrohcm/';">Repositório do GitHub</a>
+        </div>
+    </div>
+</nav>
+
+<input class="form-control" type="text" ng-model="tarefa.nome" name="nome" placeholder="Digite o nome da tarefa"/>
+<button class="btn btn-success btn-xs button" ng-click="adicionarTarefa(tarefa)" ng-disabled="!tarefa.nome">Adicionar Tarefa</button>
+
+    <div class="barraProgresso">
+        <div class="progress">
+            <div class="progress-bar" ng-style="{width : ( porcentagemConcluida() + '%' ) }">
+                <h5>{{porcentagemConcluida() + '%'}}</h5>
+            </div>
+        </div>
+    </div>
+
+    <h4>{{'Tarefas: ' + quantidadeTarefas(tarefas) + ' | ' + 'Concluído: ' + quantidadeConcluidas()}}</h4>
+
+    <table ng-show="tarefas.length > 0" class="table">
+        <tr>
+            <th></th>
+            <th>Tarefas a fazer</th>
+        </tr>
+        <tr ng-class="{'completa negrito': tarefa.completa}" ng-repeat="tarefa in tarefas">
+            <td><input type="checkbox" ng-model="tarefa.completa"/></td>
+            <td>{{tarefa.nome}}</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-warning btn-xs button" ng-click="apagarTarefas(tarefas)" ng-if="temTarefaCompleta(tarefas)">Apagar Tarefa(s)</button>
+    <button class="btn btn-danger btn-xs button" ng-click="limpaLista()" ng-if="temTarefas()">Limpar lista</button>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+
+
+h3 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 170%;
+}
+
+h4 {
+    font-family: "Trebuchet MS";
+    text-align: center;
+    font-size: 100%;
+    color: #ffffff;
+}
+
+h5 {
+    margin-top: 4px;
+    margin-bottom: auto;
+    margin-left: 4px;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.form-control {
+    margin-bottom: 5px;
+    font-size: 100%;
+}
+.completa {
+    color: #000000;
+    background-color: #2fd800;
+}
+
+.negrito {
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.progress {
+    background-color: #aaa;
+}
+
+.progress-bar {
+    background-color: #2fd800;
+}
+
+.barraProgresso{
+    font-family: "Trebuchet MS";
+    margin-top: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.table {
+    margin-top: 20px;
+    font-size: 100%;
+}
+
+th {
+    font-family: "Trebuchet MS";
+    font-weight: bold;
+}
+
+td {
+    font-family: "Trebuchet MS";
+    font-style: italic;
+}
